@@ -1,4 +1,4 @@
-package com.example.springweb.entity;
+package com.example.catalogue.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

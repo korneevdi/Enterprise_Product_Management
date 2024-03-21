@@ -1,7 +1,7 @@
-package com.example.springweb.service;
+package com.example.catalogue.service;
 
-import com.example.springweb.entity.Product;
-import com.example.springweb.repository.ProductRepository;
+import com.example.catalogue.entity.Product;
+import com.example.catalogue.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

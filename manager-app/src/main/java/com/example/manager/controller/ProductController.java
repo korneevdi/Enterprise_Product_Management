@@ -1,8 +1,8 @@
-package com.example.springweb.controller;
+package com.example.manager.controller;
 
-import com.example.springweb.controller.payload.UpdateProductPayload;
-import com.example.springweb.entity.Product;
-import com.example.springweb.service.ProductService;
+import com.example.manager.controller.payload.UpdateProductPayload;
+import com.example.manager.entity.Product;
+import com.example.manager.service.ProductService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

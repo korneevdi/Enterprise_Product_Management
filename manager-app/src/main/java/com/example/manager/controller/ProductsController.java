@@ -1,8 +1,8 @@
-package com.example.springweb.controller;
+package com.example.manager.controller;
 
-import com.example.springweb.controller.payload.NewProductPayload;
-import com.example.springweb.entity.Product;
-import com.example.springweb.service.ProductService;
+import com.example.manager.controller.payload.NewProductPayload;
+import com.example.manager.entity.Product;
+import com.example.manager.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

@@ -1,6 +1,6 @@
-package com.example.springweb.repository;
+package com.example.catalogue.repository;
 
-import com.example.springweb.entity.Product;
+import com.example.catalogue.entity.Product;
 
 import java.util.List;
 import java.util.Optional;

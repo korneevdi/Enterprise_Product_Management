@@ -1,6 +1,6 @@
-package com.example.springweb.repository;
+package com.example.catalogue.repository;
 
-import com.example.springweb.entity.Product;
+import com.example.catalogue.entity.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

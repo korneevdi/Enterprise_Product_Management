@@ -1,4 +1,4 @@
-package com.example.springweb.controller.payload;
+package com.example.manager.controller.payload;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
