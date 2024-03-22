@@ -1,11 +1,11 @@
 ### Get product
-GET http://localhost:8080/catalogue-api/products
+GET http://localhost:8081/catalogue-api/products
 
 ### Get not existing product
-GET http://localhost:8080/catalogue-api/products/1
+GET http://localhost:8081/catalogue-api/products/1
 
 ### Create product
-POST http://localhost:8080/catalogue-api/products
+POST http://localhost:8081/catalogue-api/products
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ### Create incorrect product
-POST http://localhost:8080/catalogue-api/products
+POST http://localhost:8081/catalogue-api/products
 Content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### Edit existing product
-PATCH http://localhost:8080/catalogue-api/products/1
+PATCH http://localhost:8081/catalogue-api/products/1
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ Content-Type: application/json
 }
 
 ### Incorrect edition of product
-PATCH http://localhost:8080/catalogue-api/products/1
+PATCH http://localhost:8081/catalogue-api/products/1
 Content-Type: application/json
 
 {
