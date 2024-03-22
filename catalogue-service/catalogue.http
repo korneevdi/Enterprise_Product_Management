@@ -1,0 +1,41 @@
+### Get product
+GET http://localhost:8080/catalogue-api/products
+
+### Get not existing product
+GET http://localhost:8080/catalogue-api/products/1
+
+### Create product
+POST http://localhost:8080/catalogue-api/products
+Content-Type: application/json
+
+{
+  "title": "First product",
+  "details": "Description"
+}
+
+### Create incorrect product
+POST http://localhost:8080/catalogue-api/products
+Content-Type: application/json
+
+{
+  "title": "a",
+  "details": null
+}
+
+### Edit existing product
+PATCH http://localhost:8080/catalogue-api/products/1
+Content-Type: application/json
+
+{
+  "title": "First product edited",
+  "details": "Description edited"
+}
+
+### Incorrect edition of product
+PATCH http://localhost:8080/catalogue-api/products/1
+Content-Type: application/json
+
+{
+  "title": "F",
+  "details": "Description edited"
+}
