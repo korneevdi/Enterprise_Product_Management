@@ -1,6 +1,9 @@
 ### Get product
 GET http://localhost:8081/catalogue-api/products
 
+### Get product with filtration "First..."
+GET http://localhost:8081/catalogue-api/products?filter=First%25
+
 ### Get not existing product
 GET http://localhost:8081/catalogue-api/products/1
 
