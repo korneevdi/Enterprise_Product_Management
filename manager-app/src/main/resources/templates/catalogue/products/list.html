@@ -1,34 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-  <title>Список товаров &ndash; Сельмаг</title>
+  <meta charset="UTF-8">
+  <title>List of goods &ndash; Enterprise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-<a data-th-href="@{/catalogue/products/create}">Create a good</a>
-<h1>List of goods</h1>
-<form method="get" data-th-action="@{/catalogue/products/list}">
-  <label>Filter:<input type="text" name="filter" data-th-value="${filter}">
+<div class="container">
+  <a data-th-href="@{/catalogue/products/create}">Create a good</a>
+  <h1>List of goods</h1>
+  <form method="get" data-th-action="@{/catalogue/products/list}">
+    <label><input type="text" name="filter" value="" placeholder="Search by title"></label>
     <button type="submit">Search</button>
-  </label>
-</form>
-<table>
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>Good</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr data-th-each="product : ${products}">
-    <td data-th-text="${product.id}"></td>
-    <td>
-      <a data-th-href="@{/catalogue/products/{productId}(productId=${product.id})}"
-         data-th-text="${product.title}">
-      </a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+  </form>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Good</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="product : ${products}">
+      <td data-th-text="${product.id}"></td>
+      <td>
+        <a data-th-href="@{/catalogue/products/{productId}(productId=${product.id})}"
+           data-th-text="${product.title}">
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
