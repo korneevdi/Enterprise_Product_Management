@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.ui.ConcurrentModel;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -26,6 +27,39 @@ class ProductsControllerTest {
 
     @InjectMocks
     ProductsController controller;
+
+    @Test
+    void getProductList_ReturnsProductsListPage() {
+        // given
+        var model = new ConcurrentModel();
+        var filter = "good";
+
+        var products = IntStream.range(1, 4)
+                .mapToObj(i -> new Product(i, "Товар №%d".formatted(i),
+                        "Good description №%d".formatted(i)))
+                .toList();
+
+        doReturn(products).when(this.productsRestClient).findAllProducts(filter);
+
+        // when
+        var result = this.controller.getProductList(model, filter);
+
+        // then
+        assertEquals("catalogue/products/list", result);
+        assertEquals(filter, model.getAttribute("filter"));
+        assertEquals(products, model.getAttribute("products"));
+    }
+
+    @Test
+    void getNewProductPage_ReturnsNewProductPage () {
+        // given
+
+        // when
+        var result = this.controller.getNewProductPage();
+
+        // then
+        assertEquals("catalogue/products/new_product", result);
+    }
 
     @Test
     @DisplayName("createProduct creates a new good and redirects to the good's page")
